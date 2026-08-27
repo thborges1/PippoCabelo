@@ -1,0 +1,567 @@
+/* ================= FONTES ================= */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap');
+
+/* ================= RESET E VARIÁVEIS ================= */
+:root {
+  --bg-dark: #121016;
+  --bg-card: #1d1a24;
+  --bg-card-hover: #262230;
+  --text-main: #f3f3f6;
+  --text-muted: #a09cb0;
+  --primary-accent: #ffc93c;
+  --accent-coral: #ff6f91;
+  --accent-teal: #2cc4b7;
+  --accent-violet: #9a7bff;
+  --font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Baloo 2', var(--font-family);
+  --max-width: 1140px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ================= TYPOGRAPHY & BUTTONS ================= */
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 0.825rem;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  color: var(--primary-accent);
+  margin-bottom: 8px;
+}
+
+h1, h2, h3 {
+  color: #ffffff;
+  line-height: 1.2;
+  font-family: var(--font-display);
+}
+
+h1 { font-size: clamp(2rem, 4vw, 3.2rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+h3 { font-size: 1.25rem; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--primary-accent);
+  color: #121016;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 201, 60, 0.3);
+}
+
+.btn-ghost-light {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-ghost-light:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ================= HEADER ================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(18, 16, 22, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+}
+
+.brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.brand .hl {
+  color: var(--primary-accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--bg-card);
+  padding: 16px 20px;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ================= HERO & VISUAL LIMPO ================= */
+.hero {
+  padding: 80px 0;
+}
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-copy h1 .accent {
+  color: var(--primary-accent);
+}
+
+.hero-copy .lead {
+  color: var(--text-muted);
+  margin: 20px 0 30px;
+  font-size: 1.1rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+}
+
+.hero-stats div strong {
+  display: block;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.hero-stats div span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* HERO VISUAL LIMPO (SEM GIRA-GIRA / SEM CORES EXTRA) */
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sun-wrap {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: conic-gradient(from 200deg, var(--primary-accent), var(--accent-coral), var(--accent-violet), var(--accent-teal), var(--primary-accent));
+  box-shadow: 0 20px 45px -10px rgba(255, 201, 60, 0.35);
+  padding: 6px;
+}
+
+.sun-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: var(--bg-dark);
+}
+
+.sun-core {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.sun-core img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+}
+
+.floating-badge {
+  position: absolute;
+  bottom: 10px;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.floating-badge .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-teal);
+  border-radius: 50%;
+}
+
+/* ================= SEÇÕES EM GERAL ================= */
+.section {
+  padding: 80px 0;
+}
+
+.section-dark {
+  background: #17151d;
+}
+
+.section-head {
+  max-width: 600px;
+  margin-bottom: 48px;
+}
+
+.section-head p {
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* ================= CARDS & GRIDS ================= */
+.benefits-grid,
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.benefit-card,
+.service-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 32px;
+  border-radius: 16px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.benefit-card:hover,
+.service-card:hover {
+  transform: translateY(-4px);
+  background: var(--bg-card-hover);
+}
+
+.benefit-icon,
+.service-badge {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Utilitários de cor por serviço/contato (usados nos círculos de ícone) */
+.c-sun    { background: rgba(255, 201, 60, 0.16);  color: var(--primary-accent); }
+.c-coral  { background: rgba(255, 111, 145, 0.16); color: var(--accent-coral); }
+.c-teal   { background: rgba(44, 196, 183, 0.16);  color: var(--accent-teal); }
+.c-violet { background: rgba(154, 123, 255, 0.18); color: var(--accent-violet); }
+
+.service-card ul {
+  margin-top: 16px;
+}
+
+.service-card li {
+  color: var(--text-muted);
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.service-card li:last-child {
+  border-bottom: none;
+}
+
+/* ================= BOOKING BANNER ================= */
+.booking-banner {
+  background: linear-gradient(135deg, #231f2d 0%, #1a1722 100%);
+  border: 1px solid rgba(255, 201, 60, 0.2);
+  border-radius: 24px;
+  padding: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.booking-hours {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.booking-hours strong {
+  display: block;
+  color: #fff;
+}
+
+.booking-hours span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ================= CONTATO E MAPA ================= */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.contact-card {
+  background: var(--bg-card);
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-list {
+  margin-top: 24px;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-list .ico {
+  font-size: 1.25rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.contact-list strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.contact-list span {
+  color: #fff;
+}
+
+.map-frame {
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.map-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ================= FOOTER ================= */
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 40px 0;
+  background: #0e0d12;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  padding-top: 24px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ================= BOTÕES FLUTUANTES (WHATSAPP + INSTAGRAM) ================= */
+.float-actions {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.whatsapp-float,
+.instagram-float {
+  width: 56px;
+  height: 56px;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-float {
+  background: #25d366;
+}
+
+.instagram-float {
+  background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.whatsapp-float:hover,
+.instagram-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+}
+
+.instagram-float svg {
+  width: 27px;
+  height: 27px;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 850px) {
+  .hero .container,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+  }
+
+  .nav-links,
+  .header-actions .btn {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .mobile-menu.open {
+    display: flex;
+  }
+
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}
