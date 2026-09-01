@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pippo-cabelo.vercel.app/sitemap.xml

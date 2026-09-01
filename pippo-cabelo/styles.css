@@ -3,15 +3,15 @@
 
 /* ================= RESET E VARIÁVEIS ================= */
 :root {
-  --bg-dark: #121016;
-  --bg-card: #1d1a24;
-  --bg-card-hover: #262230;
-  --text-main: #f3f3f6;
-  --text-muted: #a09cb0;
-  --primary-accent: #ffc93c;
-  --accent-coral: #ff6f91;
-  --accent-teal: #2cc4b7;
-  --accent-violet: #9a7bff;
+  --bg-dark: #fffaf6;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fff6ef;
+  --text-main: #34323b;
+  --text-muted: #7f7f8b;
+  --primary-accent: #7346e8;
+  --accent-coral: #fbac67;
+  --accent-teal: #9b7cf0;
+  --accent-violet: #c9baf7;
   --font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-display: 'Baloo 2', var(--font-family);
   --max-width: 1140px;
@@ -61,7 +61,7 @@ ul {
 }
 
 h1, h2, h3 {
-  color: #ffffff;
+  color: var(--text-main);
   line-height: 1.2;
   font-family: var(--font-display);
 }
@@ -85,22 +85,22 @@ h3 { font-size: 1.25rem; }
 
 .btn-primary {
   background: var(--primary-accent);
-  color: #121016;
+  color: #ffffff;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 201, 60, 0.3);
+  box-shadow: 0 8px 22px rgba(115, 70, 232, 0.28);
 }
 
 .btn-ghost-light {
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.28);
+  color: #3b3340;
+  border: 1px solid rgba(255, 255, 255, 0.60);
 }
 
 .btn-ghost-light:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.45);
 }
 
 /* ================= HEADER ================= */
@@ -108,9 +108,9 @@ h3 { font-size: 1.25rem; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(18, 16, 22, 0.85);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(115, 70, 232, 0.10);
 }
 
 .site-header .container {
@@ -151,7 +151,7 @@ h3 { font-size: 1.25rem; }
 }
 
 .nav-links a:hover {
-  color: #fff;
+  color: var(--primary-accent);
 }
 
 .header-actions {
@@ -164,7 +164,7 @@ h3 { font-size: 1.25rem; }
   display: none;
   background: none;
   border: none;
-  color: #fff;
+  color: var(--primary-accent);
   cursor: pointer;
 }
 
@@ -174,12 +174,19 @@ h3 { font-size: 1.25rem; }
   background: var(--bg-card);
   padding: 16px 20px;
   gap: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(115, 70, 232, 0.10);
+  box-shadow: 0 8px 24px rgba(87, 64, 120, 0.06);
 }
 
 /* ================= HERO & VISUAL LIMPO ================= */
 .hero {
   padding: 80px 0;
+  background-color: #fbac67;
+  background-image:
+    linear-gradient(135deg, transparent 0 46%, rgba(255,255,255,0.10) 46% 50%, transparent 50% 100%),
+    linear-gradient(135deg, transparent 0 46%, rgba(198,116,52,0.10) 46% 50%, transparent 50% 100%);
+  background-size: 340px 340px, 420px 420px;
+  background-position: 0 0, 160px 80px;
 }
 
 .hero .container {
@@ -208,14 +215,14 @@ h3 { font-size: 1.25rem; }
 .hero-stats {
   display: flex;
   gap: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.42);
   padding-top: 24px;
 }
 
 .hero-stats div strong {
   display: block;
   font-size: 1.4rem;
-  color: #fff;
+  color: var(--text-main);
 }
 
 .hero-stats div span {
@@ -239,8 +246,8 @@ h3 { font-size: 1.25rem; }
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: conic-gradient(from 200deg, var(--primary-accent), var(--accent-coral), var(--accent-violet), var(--accent-teal), var(--primary-accent));
-  box-shadow: 0 20px 45px -10px rgba(255, 201, 60, 0.35);
+  background: conic-gradient(from 200deg, #7346e8, #b69df4, #fbac67, #f8c08d, #7346e8);
+  box-shadow: 0 22px 45px -12px rgba(115, 70, 232, 0.28);
   padding: 6px;
 }
 
@@ -249,7 +256,7 @@ h3 { font-size: 1.25rem; }
   position: absolute;
   inset: 6px;
   border-radius: 50%;
-  background: var(--bg-dark);
+  background: #ffffff;
 }
 
 .sun-core {
@@ -267,21 +274,21 @@ h3 { font-size: 1.25rem; }
   max-width: 85%;
   max-height: 85%;
   object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 5px 14px rgba(65, 49, 95, 0.18));
 }
 
 .floating-badge {
   position: absolute;
   bottom: 10px;
   background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(115, 70, 232, 0.12);
   padding: 8px 16px;
   border-radius: 50px;
   font-size: 0.85rem;
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 24px rgba(77, 57, 112, 0.12);
 }
 
 .floating-badge .dot {
@@ -297,7 +304,7 @@ h3 { font-size: 1.25rem; }
 }
 
 .section-dark {
-  background: #17151d;
+  background: #f4f1fb;
 }
 
 .section-head {
@@ -321,7 +328,7 @@ h3 { font-size: 1.25rem; }
 .benefit-card,
 .service-card {
   background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(115, 70, 232, 0.10);
   padding: 32px;
   border-radius: 16px;
   transition: transform 0.2s ease, background-color 0.2s ease;
@@ -346,10 +353,10 @@ h3 { font-size: 1.25rem; }
 }
 
 /* Utilitários de cor por serviço/contato (usados nos círculos de ícone) */
-.c-sun    { background: rgba(255, 201, 60, 0.16);  color: var(--primary-accent); }
-.c-coral  { background: rgba(255, 111, 145, 0.16); color: var(--accent-coral); }
-.c-teal   { background: rgba(44, 196, 183, 0.16);  color: var(--accent-teal); }
-.c-violet { background: rgba(154, 123, 255, 0.18); color: var(--accent-violet); }
+.c-sun    { background: rgba(251, 172, 103, 0.20); color: #d97827; }
+.c-coral  { background: rgba(115, 70, 232, 0.12);  color: var(--primary-accent); }
+.c-teal   { background: rgba(155, 124, 240, 0.15); color: #7955df; }
+.c-violet { background: rgba(201, 186, 247, 0.34); color: #7044df; }
 
 .service-card ul {
   margin-top: 16px;
@@ -358,7 +365,7 @@ h3 { font-size: 1.25rem; }
 .service-card li {
   color: var(--text-muted);
   padding: 6px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(115, 70, 232, 0.08);
 }
 
 .service-card li:last-child {
@@ -367,8 +374,8 @@ h3 { font-size: 1.25rem; }
 
 /* ================= BOOKING BANNER ================= */
 .booking-banner {
-  background: linear-gradient(135deg, #231f2d 0%, #1a1722 100%);
-  border: 1px solid rgba(255, 201, 60, 0.2);
+  background: linear-gradient(135deg, #fff7f0 0%, #f2edff 100%);
+  border: 1px solid rgba(115, 70, 232, 0.16);
   border-radius: 24px;
   padding: 48px;
   display: flex;
@@ -385,7 +392,7 @@ h3 { font-size: 1.25rem; }
 
 .booking-hours strong {
   display: block;
-  color: #fff;
+  color: var(--text-main);
 }
 
 .booking-hours span {
@@ -404,7 +411,7 @@ h3 { font-size: 1.25rem; }
   background: var(--bg-card);
   padding: 32px;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(115, 70, 232, 0.10);
 }
 
 .contact-list {
@@ -435,14 +442,14 @@ h3 { font-size: 1.25rem; }
 }
 
 .contact-list span {
-  color: #fff;
+  color: var(--text-main);
 }
 
 .map-frame {
   border-radius: 16px;
   overflow: hidden;
   min-height: 300px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(115, 70, 232, 0.10);
 }
 
 .map-frame iframe {
@@ -455,7 +462,7 @@ h3 { font-size: 1.25rem; }
 .site-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding: 40px 0;
-  background: #0e0d12;
+  background: #6f45d8;
 }
 
 .footer-top {
@@ -478,7 +485,7 @@ h3 { font-size: 1.25rem; }
 .footer-bottom {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.20);
   padding-top: 24px;
   font-size: 0.85rem;
   color: var(--text-muted);
@@ -500,7 +507,7 @@ h3 { font-size: 1.25rem; }
 .instagram-float {
   width: 56px;
   height: 56px;
-  color: #fff;
+  color: var(--text-main);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -564,4 +571,74 @@ h3 { font-size: 1.25rem; }
     gap: 16px;
     align-items: flex-start;
   }
+}
+
+/* ================= AJUSTES DA PALETA MINHAAGENDA ================= */
+.site-footer,
+.site-footer .brand,
+.site-footer .footer-links a,
+.site-footer .footer-bottom {
+  color: #ffffff;
+}
+
+.site-footer .brand .hl {
+  color: #ffd1aa;
+}
+
+.site-footer .footer-links a:hover {
+  color: #ffffff;
+  opacity: 0.82;
+}
+
+.hero .eyebrow {
+  color: #5f3fc8;
+}
+
+.hero-copy h1,
+.hero-stats div strong {
+  color: #34323b;
+}
+
+.floating-badge {
+  background: #ffffff;
+  color: #4f4c57;
+}
+
+.floating-badge .dot {
+  background: #7346e8;
+}
+
+.booking-banner h2,
+.booking-hours strong,
+.contact-list span {
+  color: #34323b;
+}
+
+.service-card,
+.benefit-card,
+.contact-card,
+.booking-banner {
+  box-shadow: 0 12px 32px rgba(94, 70, 132, 0.07);
+}
+
+.service-card:hover,
+.benefit-card:hover {
+  box-shadow: 0 16px 36px rgba(94, 70, 132, 0.11);
+}
+
+/* ================= CORREÇÃO ÍCONE WHATSAPP ================= */
+.whatsapp-float {
+  color: black;
+}
+
+.whatsapp-float svg {
+  display: block;
+  width: 32px;
+  height: 32px;
+  color: #ffffff;
+  fill: #ffffff;
+}
+
+.whatsapp-float svg path {
+  fill: #ffffff;
 }
