@@ -41,9 +41,15 @@
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         "opens": "09:00",
         "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday"],
+        "opens": "09:00",
+        "closes": "17:00"
       }
     ],
     "sameAs": [
@@ -117,7 +123,7 @@
               <img src="assets/logo.png" alt="Pippo Cabelo - Salão Adulto, Infantil e Estética em Caxias do Sul">
             </div>
           </div>
-          <div class="floating-badge"><span class="dot"></span> Horários abertos agora</div>
+          <div class="floating-badge" id="statusBadge"><span class="dot"></span><span id="statusText">Verificando horário...</span></div>
         </div>
       </div>
     </section>
@@ -209,7 +215,8 @@
             </p>
 
             <div class="booking-hours">
-              <div><strong>Seg – Sáb</strong><span>9h às 19h</span></div>
+              <div><strong>Seg – Sex</strong><span>9h às 19h</span></div>
+              <div><strong>Sábado</strong><span>9h às 17h</span></div>
               <div><strong>Online</strong><span>Agendamento 24h</span></div>
             </div>
           </div>
@@ -258,7 +265,8 @@
                 <span class="ico c-violet">🕘</span>
                 <div>
                   <strong>Atendimento</strong>
-                  <span>Segunda a sábado, das 9h às 19h</span>
+                  <span>Segunda a sexta, das 9h às 19h</span>
+                  <span>| Sábado, das 9h às 17h</span>
                 </div>
               </li>
             </ul>

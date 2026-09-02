@@ -6,8 +6,8 @@
   --bg-dark: #fffaf6;
   --bg-card: #ffffff;
   --bg-card-hover: #fff6ef;
-  --text-main: #34323b;
-  --text-muted: #7f7f8b;
+  --text-main: #343438;
+  --text-muted: #141414;
   --primary-accent: #7346e8;
   --accent-coral: #fbac67;
   --accent-teal: #9b7cf0;
@@ -230,7 +230,6 @@ h3 { font-size: 1.25rem; }
   color: var(--text-muted);
 }
 
-/* HERO VISUAL LIMPO (SEM GIRA-GIRA / SEM CORES EXTRA) */
 .hero-visual {
   position: relative;
   display: flex;
@@ -642,3 +641,15 @@ h3 { font-size: 1.25rem; }
 .whatsapp-float svg path {
   fill: #ffffff;
 }
+
+/* ================= STATUS AUTOMÁTICO ABERTO / FECHADO ================= */
+.floating-badge.is-open .dot {
+  background: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.14);
+}
+
+.floating-badge.is-closed .dot {
+  background: #ef4444;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12);
+}
+
